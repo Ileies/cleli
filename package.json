@@ -42,6 +42,8 @@
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
+		"@threlte/core": "^8.1.5",
+		"@threlte/extras": "^9.5.4",
 		"three": "^0.180.0"
 	}
 }
