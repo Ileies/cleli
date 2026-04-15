@@ -21,7 +21,7 @@
 	const contactInfo = {
 		email: 'hello@cleli.de',
 		discord: '@cleli',
-		discordServer: 'https://discord.gg/7nZKeT5ZTQ',
+		discordServer: 'https://discord.gg/gY8HjAr9cz',
 		github: 'https://github.com/cleli61'
 	};
 </script>
@@ -55,7 +55,7 @@
 		<!-- Main Content -->
 		<div class="space-y-6">
 			<div>
-				<h1 class="text-4xl font-bold text-base-content mb-2">
+				<h1 class="text-4xl font-bold text-red-500 mb-2">
 					Website in Development
 				</h1>
 				<p class="text-base-content/70 text-lg">
@@ -105,7 +105,7 @@
 									rel="noopener noreferrer"
 									target="_blank"
 								>
-									I love Dragons
+									Join the Dragon Domain
 								</a>
 							</div>
 
