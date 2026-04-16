@@ -139,6 +139,7 @@
 	let selectedProject = $state<Project | null>(null);
 	let lightboxOpen = $state(false);
 	let lightboxIndex = $state(0);
+	let tileLoaded = $state<Record<number, boolean>>({});
 
 	// ── Derived ────────────────────────────────────────────────────────────────
 	// At scrollY = 0 → opacity 1; at scrollY = windowHeight/2 → opacity 0.2
@@ -271,13 +272,18 @@
 							class="group relative aspect-square cursor-pointer overflow-hidden bg-[#e0e0e0] focus:outline-none"
 							onclick={() => openProject(p)}
 						>
-							{#if p.thumbnail && p.thumbnailVideo}
-								<video
-									src={p.thumbnail}
-									class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-									autoplay muted loop playsinline
-								><track kind="captions" /></video>
-							{:else if p.thumbnail}
+						{#if p.thumbnail && p.thumbnailVideo}
+							{#if !tileLoaded[p.id]}
+								<div class="absolute inset-0 shimmer"></div>
+							{/if}
+							<video
+								src={p.thumbnail}
+								class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+								style="opacity: {tileLoaded[p.id] ? 1 : 0}; transition: opacity 0.4s ease;"
+								autoplay muted loop playsinline
+								onloadeddata={() => { tileLoaded[p.id] = true; }}
+							><track kind="captions" /></video>
+						{:else if p.thumbnail}
 								<img
 									src={p.thumbnail}
 									alt={p.title}
@@ -509,6 +515,21 @@
 {/if}
 
 <style>
+	:global(.shimmer) {
+		background: linear-gradient(
+			90deg,
+			#d4d4d4 25%,
+			#f0f0f0 50%,
+			#d4d4d4 75%
+		);
+		background-size: 200% 100%;
+		animation: shimmer-slide 1.6s infinite linear;
+	}
+	@keyframes shimmer-slide {
+		0%   { background-position: 200% 0; }
+		100% { background-position: -200% 0; }
+	}
+
 	.nav-link {
 		color: rgba(255, 255, 255, 0.65);
 	}
