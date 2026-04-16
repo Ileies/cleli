@@ -1,3 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @plugin 'daisyui';
+
+html, body {
+	background-color: #111111;
+}

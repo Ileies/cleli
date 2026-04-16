@@ -64,7 +64,7 @@
 			<div>
 				<a
 					class="btn btn-primary btn-wide text-lg"
-					href="/portfolio"
+					href="/"
 				>
 					Portfolio
 				</a>
