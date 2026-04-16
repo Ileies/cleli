@@ -1,0 +1,6 @@
+Move portfolio to root route, redirect /portfolio to /
+
+- Root / now shows the portfolio directly
+- /portfolio redirects to / (meta refresh + goto for SPA)
+- /info preserves the old landing page
+- Fixed navbar links in portfolio and about pages

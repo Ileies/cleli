@@ -8,11 +8,11 @@
 
 <!-- ══════════════════════════ NAVBAR ══════════════════════════ -->
 <nav class="fixed top-0 left-0 right-0 z-[60] flex items-center justify-between px-5 py-3 md:px-8 nav-bar">
-	<a href="/portfolio" aria-label="Home" class="flex shrink-0 items-center">
+	<a href="/" aria-label="Home" class="flex shrink-0 items-center">
 		<img src="/favicon.png" alt="Logo" class="h-8 w-8 rounded-md object-contain" />
 	</a>
 	<div class="flex items-center gap-1">
-		<a href="/portfolio#gallery" class="nav-link rounded-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors">
+		<a href="/#gallery" class="nav-link rounded-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors">
 			Works
 		</a>
 		<a href="/about" class="nav-link nav-link--active rounded-md px-4 py-1.5 text-xs font-medium uppercase tracking-widest transition-colors">
